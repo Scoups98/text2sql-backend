@@ -12,7 +12,7 @@ app.post('/api/generate_sql', async (req, res) => {
         // 打印 token 信息，调试环境变量
         console.log('HF_TOKEN:', process.env.HF_TOKEN);
 
-        const response = await fetch('https://api-inference.huggingface.co/models/Qwen/Qwen2.5-0.5B-Instruct', {
+        const response = await fetch('https://api-inference.huggingface.co/models/Qwen/Qwen2-0.5B-Instruct', {
             method: 'POST',
             headers: {
                 'Authorization': `Bearer ${process.env.HF_TOKEN}`,
