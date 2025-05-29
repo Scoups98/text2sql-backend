@@ -3,11 +3,7 @@ const fetch = require('node-fetch');
 require('dotenv').config();
 
 const app = express();
-const PORT = process.env.PORT || 5000;  // Render 会自动分配 PORT 环境变量
-
-app.listen(PORT, '0.0.0.0', () => {
-    console.log(`Server listening on http://0.0.0.0:${PORT}`);
-});
+const PORT = process.env.PORT || 5000;
 
 app.use(express.json());
 
@@ -32,6 +28,6 @@ app.post('/api/generate_sql', async (req, res) => {
     }
 });
 
-app.listen(PORT, () => {
-    console.log(`Server listening on http://localhost:${PORT}`);
+app.listen(PORT, '0.0.0.0', () => {
+    console.log(`Server listening on http://0.0.0.0:${PORT}`);
 });
